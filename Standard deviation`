@@ -1,0 +1,13 @@
+my_data<-read.csv(file.choose(),sep = ",",header = TRUE)
+my_data
+sd_A<-sd(my_data$A)
+Var_A<-var(my_data$A)
+cat("standard variation of A:",sd_A,"\n")
+cat("variation of A:",Var_A,"\n")
+sd_B<-sd(my_data$B)
+Var_B<-var(my_data$B)
+cat("s d of B:",sd_B,"\n")
+cat("v of B:",Var_B,"\n")
+View(my_data)
+my_data<-read.csv(file.choose(),sep = ",",header = TRUE)
+my_data
