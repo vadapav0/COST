@@ -1,0 +1,18 @@
+# Define the data
+dist <- c(25, 25, 25)
+speed <- c(25, 50, 75)
+data <- rep(speed, dist)
+
+# Calculate mean speed
+mean_speed <- mean(data)
+print(paste("Arithmetic mean speed:", mean_speed))
+
+# Load the psych library
+library(psych)
+
+# Calculate harmonic mean
+harmonic_speed <- harmonic.mean(data)
+print(paste("Harmonic mean speed:", harmonic_speed))
+
+print("Since speed has a fractional unit measure, the harmonic mean is a correct measure.")
+
