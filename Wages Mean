@@ -1,0 +1,19 @@
+data<-read.csv(file.choose(),sep = ",",header = TRUE)
+
+#mode=l1+((f1-f0)/(f1-f0+f1-f2))*l2-l1
+data$f0<-data.table::shift(data$Frequency,1)
+data$f2<-data.table::shift(data$Frequency,-1)
+
+data$Low<-data$Low - 0.5
+data$High<-data$High + 0.5
+View(data)
+
+mode1<-data[which.max(data$Frequency),]
+l1<-mode1$Low
+l2<-mode1$High
+f0<-mode1$f0
+f1<-mode1$Frequency
+f2<-mode1$f2
+modeval<- l1+((f1-f0)/(f1-f0+f1-f2)*(l2-l1))
+modeval
+
