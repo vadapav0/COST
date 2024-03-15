@@ -1,0 +1,15 @@
+print("What percentgae play in fewer than 750 games")
+pa <- pnorm(750, mean = 1500, sd =350, lower.tail = T)
+percanta <- pa * 100
+print(percanta)
+
+print("what percentage play in more than 2000 games")
+pb <- pnorm(2000, mean = 1500, sd =350, lower.tail = FALSE)
+percantb <- pb * 100
+print(percantb)
+
+print("Find the ()th percentile for the number of games played during a career")
+p5<- round(qnorm(0.05, mean = 1500, sd = 350),0)
+p95 <- round(qnorm(0.05, mean = 1500, sd = 350, lower.tail = FALSE),0)
+print("the 90th percentile for the number of games during the career")
+cat("Range for 90 percentile is:",p5,"-",p95)
